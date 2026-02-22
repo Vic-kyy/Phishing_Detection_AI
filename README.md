@@ -52,6 +52,9 @@ Phishing/
 └── demo/                     # Demonstration
     └── demo.html             # Safe environment to test links
 ```
+<img width="1465" height="835" alt="Screenshot 2026-02-22 at 10 05 45 AM" src="https://github.com/user-attachments/assets/c7c0a494-fd40-452e-b289-fcc4edac2dbc" />
+<img width="1469" height="834" alt="Screenshot 2026-02-22 at 10 05 58 AM" src="https://github.com/user-attachments/assets/7d704d09-f0da-479d-a25c-9818d5168c20" />
+
 
 ---
 
