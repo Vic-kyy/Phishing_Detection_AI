@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "PhishHover",
+  "version": "1.0",
+  "description": "Real-time AI phishing prevention on hover.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "http://localhost:8000/*",
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "Open PhishHover Stats"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "side_panel": {
+    "default_path": "panel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "css": [
+        "styles.css"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}

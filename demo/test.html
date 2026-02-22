@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhishHover Test Page - Comprehensive Demo</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+            background: #f5f5f5;
+        }
+
+        h1 {
+            color: #333;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            color: #555;
+            margin-top: 30px;
+            font-size: 20px;
+        }
+
+        h3 {
+            color: #666;
+            font-size: 16px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .link-section {
+            margin: 20px 0;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .safe-section {
+            border-left: 4px solid #2e7d32;
+        }
+
+        .threat-section {
+            border-left: 4px solid #d32f2f;
+        }
+
+        a {
+            display: block;
+            margin: 10px 0;
+            padding: 12px;
+            background: #f9f9f9;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #0066cc;
+            transition: background 0.2s;
+            font-size: 14px;
+            word-break: break-all;
+        }
+
+        a:hover {
+            background: #e8f4ff;
+        }
+
+        .instructions {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .instructions h2 {
+            color: white;
+            margin-top: 0;
+        }
+
+        .instructions ol {
+            margin: 10px 0;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: bold;
+            margin-left: 8px;
+        }
+
+        .badge-safe {
+            background: #e8f5e9;
+            color: #2e7d32;
+        }
+
+        .badge-threat {
+            background: #ffebee;
+            color: #c62828;
+        }
+
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 4px;
+            font-size: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🛡️ PhishHover Comprehensive Test Page</h1>
+
+    <div class="instructions">
+        <h2>Testing Instructions</h2>
+        <ol>
+            <li>Open Chrome DevTools Console (F12)</li>
+            <li>Click the PhishHover extension icon to open the Side Panel</li>
+            <li>Hover over links below to test detection</li>
+            <li>Watch for console logs and Side Panel updates</li>
+            <li>Only THREATS will be counted in stats</li>
+        </ol>
+    </div>
+
+    <div class="note">
+        ⚠️ <strong>Demo Safety:</strong> These are test URLs for demonstration purposes. The suspicious URLs are
+        examples and may not be real phishing sites.
+    </div>
+
+    <!-- LEGITIMATE LINKS -->
+    <div class="link-section safe-section">
+        <h2>✅ Legitimate / Safe Links <span class="badge badge-safe">CONTROL SAMPLES</span></h2>
+        <p>These should classify as <strong>SAFE</strong> and will NOT be counted in threat statistics.</p>
+
+        <a href="https://www.google.com">https://www.google.com</a>
+        <a href="https://www.amazon.com">https://www.amazon.com</a>
+        <a href="https://github.com/login">https://github.com/login</a>
+        <a href="https://www.microsoft.com/en-us">https://www.microsoft.com/en-us</a>
+        <a href="https://www.paypal.com/signin">https://www.paypal.com/signin</a>
+        <a href="https://stackoverflow.com/questions">https://stackoverflow.com/questions</a>
+        <a href="https://openai.com/blog">https://openai.com/blog</a>
+        <a href="https://developer.mozilla.org">https://developer.mozilla.org</a>
+        <a href="https://www.apple.com/support">https://www.apple.com/support</a>
+        <a href="https://www.linkedin.com/feed/">https://www.linkedin.com/feed/</a>
+    </div>
+
+    <!-- PHISHING EXAMPLES -->
+    <div class="link-section threat-section">
+        <h2>⚠️ Suspicious / Phishing-Like Links <span class="badge badge-threat">TEST THREATS</span></h2>
+        <p>These demonstrate various phishing techniques and should trigger threat detection.</p>
+
+        <h3>1️⃣ IP Address Usage</h3>
+        <p style="font-size: 13px; color: #666;">Attackers use IP addresses to avoid domain registration.</p>
+        <a href="http://185.43.22.91/login">http://185.43.22.91/login</a>
+        <a href="http://103.56.22.18/bank/update">http://103.56.22.18/bank/update</a>
+        <a href="http://192.168.0.50/verify-account">http://192.168.0.50/verify-account</a>
+
+        <h3>2️⃣ Subdomain Spoofing</h3>
+        <p style="font-size: 13px; color: #666;">Fake brand names hidden in subdomains.</p>
+        <a href="https://paypal.com.security-check.xyz/login">https://paypal.com.security-check.xyz/login</a>
+        <a href="https://amazon.verify-user-update.ru/account">https://amazon.verify-user-update.ru/account</a>
+        <a href="https://google.support-login.cn/security">https://google.support-login.cn/security</a>
+
+        <h3>3️⃣ URL Shorteners (Hidden Destination)</h3>
+        <p style="font-size: 13px; color: #666;">Shortened URLs hide the real destination.</p>
+        <a href="http://bit.ly/update-bank-secure">http://bit.ly/update-bank-secure</a>
+        <a href="http://tinyurl.com/secure-otp-login">http://tinyurl.com/secure-otp-login</a>
+        <a href="http://goo.gl/security-check-user">http://goo.gl/security-check-user</a>
+
+        <h3>4️⃣ Dash / Prefix / Suffix Spoofing</h3>
+        <p style="font-size: 13px; color: #666;">Brand names with deceptive prefixes/suffixes.</p>
+        <a href="https://paypal-security-update.com">https://paypal-security-update.com</a>
+        <a href="https://amazon-login-support.net">https://amazon-login-support.net</a>
+        <a href="https://apple-id-verify-login.info">https://apple-id-verify-login.info</a>
+
+        <h3>5️⃣ Long Obfuscated URLs</h3>
+        <p style="font-size: 13px; color: #666;">Excessively long URLs to confuse users.</p>
+        <a
+            href="https://secure-account-update-paypal-user-verification-check-login.com/update/account/security/validate-user.php">https://secure-account-update-paypal-user-verification-check-login.com/update/account/security/validate-user.php</a>
+
+        <h3>6️⃣ Fake Banking / Payment Pages</h3>
+        <p style="font-size: 13px; color: #666;">Credential harvesting patterns.</p>
+        <a href="https://secure-bank-login-update.info/verify">https://secure-bank-login-update.info/verify</a>
+        <a href="https://banking-secure-update-account.net/login">https://banking-secure-update-account.net/login</a>
+    </div>
+
+    <!-- SIDE-BY-SIDE COMPARISON -->
+    <div class="link-section">
+        <h2>🔍 Side-by-Side Comparison</h2>
+        <p>Hover over both to see the difference in detection.</p>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 15px;">
+            <div>
+                <h3 style="color: #2e7d32;">✅ Legitimate</h3>
+                <a href="https://www.paypal.com/login">https://www.paypal.com/login</a>
+                <a href="https://www.amazon.com">https://www.amazon.com</a>
+                <a href="https://github.com/login">https://github.com/login</a>
+            </div>
+            <div>
+                <h3 style="color: #d32f2f;">⚠️ Suspicious</h3>
+                <a
+                    href="https://paypal-login-security-update.xyz/login">https://paypal-login-security-update.xyz/login</a>
+                <a href="https://amazon.verify-user-update.ru/account">https://amazon.verify-user-update.ru/account</a>
+                <a href="https://github-security-verify.info/login">https://github-security-verify.info/login</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="note">
+        💡 <strong>Tip:</strong> Open the Side Panel to see real-time threat statistics. Only phishing threats are
+        counted!
+    </div>
+</body>
+
+</html>
